@@ -1,0 +1,231 @@
+body {
+	background-color: #272562; 
+	font-family: "Lato", sans-serif;
+	text-align: center;
+	color: white;
+	background: linear-gradient(#27A7DE, #19173C) fixed;
+	background-repeat: no-repeat;
+} 
+footer { 
+	text-align: center;
+	width: 100%;
+	height: 50px;
+	color: white;	
+	font-family: "Lato", sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div#todaysDay{
+	text-align: left;
+	display: flex;
+	justify-content: flex-start;
+}
+
+span#today{
+	font-weight: 900;
+}
+
+div#zipcodeAndButton{
+	width: 100%;
+	text-align: right;
+	flex-direction: column;
+	align-self: flex-end;
+}
+
+div#submitButton{
+	display: flex;
+	align-content: flex-end;
+	justify-content: flex-end;
+	margin-top: .5%;
+}
+
+button{
+	background-color: #00B9F1;
+	color: #262965;
+	border-radius:10px;
+	border: 15px;
+	width: 75px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+
+
+/* Search bar*/
+input[type=text] {
+    transition: width 0.4s ease-in-out;
+	border-radius:20px;
+	border: 0px;
+	width: 120px;
+	height: 25px;
+	justify-content: flex-end;
+}
+
+div#locationAndCurrentTemp{
+	margin-bottom: 3%;
+	display: flex;
+
+	justify-content: center;
+	align-items: flex-start;
+	align-content: center;
+	text-align: center;
+}
+
+button#submitMe{
+	align-items: center;
+}
+
+#currentTempDes{
+	margin: 0%;
+}
+
+#todaysCurrentInfo{
+	font-size: 200%;
+}
+
+div#humidityAndWindSpeed{
+	font-size: 20px;
+	margin-top: 7.5%;
+}
+
+div#humidityAndPic{
+	width: 50%;
+}
+
+span#humidityInfo{
+	display: inline-block;	/*spans don't render top and bottom margins*/
+	position: relative;
+	bottom: 70%;
+}
+
+#degree{
+	margin-bottom: 18%;
+	height: 17px;
+	width: 16px;
+}
+
+img#humidityImg{
+	height: 30%;
+	vertical-align:middle;
+}
+
+img#windSpeedImg{
+	height: 30%;
+	vertical-align:middle;
+}
+
+button.submit {
+	background-color: #00B9F1;
+	text-align: center;
+	color: white;
+    margin: 10px;
+	border: 0px;
+    font-size: medium;
+    width: 70px;
+    height: 40px;
+	display: flex;
+	border-radius:10px;
+	justify-content: flex-end;
+}
+
+div#weatherBar{
+	display: flex;
+	margin-left: 17%;
+	margin-right: 17%;
+	max-width: 770px;
+	overflow: hidden;
+}
+
+div#forecastMovable{
+	display: flex;
+
+	/* spacing inside slider controlled by Javascript */
+	position: relative;
+
+	/* don't shrink to fit into container */
+	flex-shrink: 0;
+
+	/* animate transition when "left" property changes */
+	transition-property: left;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+}
+
+
+.dayOfWeather{
+	max-width: 140px;
+	max-height: 240px;
+	min-width: 140px;
+	background-color: #4482AB;
+	border-radius:10px;
+	margin-left: 12px;
+	flex-direction: column;
+
+}
+
+/*The high of any given day */
+.theHigh{
+	font-weight: bold;
+}
+
+/*To add a margin-bottom to all highs and lows */
+.bottomMargin{
+	display: inline-block;
+	margin-bottom: 2%;
+}
+
+.picSizeLimit{
+	max-height: 111px;
+	max-width: 111px;
+	min-height: 111px;
+	min-width: 111px;
+}
+
+
+div#buttonStuff{
+	margin-top: 2%;
+	display: flex;
+	min-width: 100%;
+	text-align: center;
+}
+
+div#leftButtonStuff{
+	margin-left: 12%;
+	display: flex;
+}
+
+div#rightButtonStuff{
+	margin-left: 38%;
+	display: flex;
+}
+
+.arrowButton {
+	width: 65px;
+	height: 58px;
+
+	display: flex;
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-direction: row;
+	justify-content: center;
+}
+
+div#leftArrowText{
+	margin-top: 3%;
+}
+
+div#rightArrowText{
+	line-height: 25%;
+	margin-top: 10%;
+}
+
+.verticallyAlign{
+	padding-top: 5px;
+}
+
+img#leftArrow{
+	margin-left: 25%;
+}

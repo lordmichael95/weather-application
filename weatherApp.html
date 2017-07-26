@@ -1,0 +1,177 @@
+<!doctype HTML>
+<!--
+Beginning of Weather App
+
+Also requires files:
+	weather.css
+	weather.js
+-->
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width"> 
+	<title>Weather App</title>
+	<!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
+	<link rel="stylesheet" type="text/css" href="weather.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+	<div id="todaysDate">
+		<div id="time" style="font-size:30px;"> <span id="today">Today</span> <span id="timey"> </span></div>
+		<span id= "date" > </span>
+	</div>
+
+	<div id="zipcodeAndButton">
+		<div id="zipocde" >
+			<input id="zipcodeBox" type="text" name="search" placeholder="Enter Zip or City">
+		</div>
+		<div id="submitButton">
+			<button id="submitMe" onclick="getNewPlace()">Submit</button>
+		</div>
+	</div>
+
+	<!--The big central temp for today -->
+	<div id="locationAndCurrentTemp">
+		<div id="currentTempPicandDes" style="font-size:60px;"> <!--onload="getPicturePath()"-->
+			<img id="currentTempPic" src="WeatherApp%203/sunny.png" alt= "Image is unavailable" title="Sunny"> </img>
+			<p id="currentTempDes" style="font-size:30px;"> </p>
+		</div>
+		<div id="location" style="font-size:30px;">
+			<div id="city1">
+				<span id="city"> </span>
+				,
+				<span id="region"> </span>
+			</div>
+			<span id="todaysCurrentInfo" >
+				<span id="currentTemp"> </span>
+				<img id="degree" src="WeatherApp%203/degree.png" alt= "Image is unavailable" title="Degree Symbol">
+				<span id="tempSystem"> </span>
+			</span>
+			<div id="humidityAndWindSpeed">
+
+					<img id="humidityImg" src="WeatherApp%203/drop.png" alt= "Image is unavailable" title="Humidity">
+					<span id="humidityInfo">
+							<span id="humidity"> </span>
+							<span id="percentText">% </span>
+					</span>
+
+
+					<img id="windSpeedImg" src="WeatherApp%203/wind.png" alt= "Image is unavailable" title="Wind Speed">
+					<span id="windSpeed"> </span>
+					<span id="speedSystem"> </span>
+
+
+
+			</div>
+
+		</div>
+	</div>
+
+
+	<!--weatherBar: all the daily temps are listed here -->
+	<div id="weatherBar">
+		<div id="forecastMovable">
+			<div class="dayOfWeather" id="box0">
+				<p id="day0"></p>
+				<img class="picSizeLimit" id="main0"  alt= "Image is unavailable" >
+				<p id="text0"> </p>
+				<span class="theHigh bottomMargin" id="high0"> </span> <span class="bottomMargin" id="low0"> </span>
+			</div>
+
+			<div class="dayOfWeather">
+				<p id="day1"></p>
+				<img class="picSizeLimit" id="main1"  alt= "Image is unavailable" >
+				<p id="text1"> </p>
+				<span class="theHigh bottomMargin" id="high1"> </span> <span class="bottomMargin" id="low1"> </span>
+			</div>
+
+			<div class="dayOfWeather">
+				<p id="day2"></p>
+				<img class="picSizeLimit" id="main2"  alt= "Image is unavailable" >
+				<p id="text2"> </p>
+				<span class="theHigh bottomMargin" id="high2"> </span> <span class="bottomMargin" id="low2"> </span>
+			</div>
+
+			<div class="dayOfWeather">
+				<p id="day3"></p>
+				<img class="picSizeLimit" id="main3" alt= "Image is unavailable" >
+				<p id="text3"> </p>
+				<span class="theHigh bottomMargin" id="high3"> </span> <span class="bottomMargin" id="low3"> </span>
+			</div>
+
+			<div class="dayOfWeather">
+				<p id="day4"></p>
+				<img class="picSizeLimit" id="main4"  alt= "Image is unavailable" >
+				<p id="text4"> </p>
+				<span class="theHigh bottomMargin" id="high4"> </span> <span class="bottomMargin" id="low4"> </span>
+			</div>
+
+			<div class="dayOfWeather">
+				<p id="day5"></p>
+				<img class="picSizeLimit" id="main5" src="WeatherApp 3/sunny.png" alt= "Image is unavailable" title="Sunny">
+				<p id="text5"> </p>
+				<span class="theHigh bottomMargin" id="high5"> </span> <span class="bottomMargin" id="low5"> </span>
+			</div>
+
+			<div class="dayOfWeather">
+				<p id="day6"></p>
+				<img class="picSizeLimit" id="main6" src="WeatherApp 3/sunny.png" alt= "Image is unavailable" title="Sunny">
+				<p id="text6"> </p>
+				<span class="theHigh bottomMargin" id="high6"> </span> <span class="bottomMargin" id="low6"> </span>
+			</div>
+
+			<div class="dayOfWeather">
+				<p id="day7"></p>
+				<img class="picSizeLimit" id="main7" src="WeatherApp 3/sunny.png" alt= "Image is unavailable" title="Sunny">
+				<p id="text7"> </p>
+				<span class="theHigh bottomMargin" id="high7"> </span> <span class="bottomMargin" id="low7"> </span>
+			</div>
+
+			<div class="dayOfWeather">
+				<p id="day8"></p>
+				<img class="picSizeLimit" id="main8" src="WeatherApp 3/sunny.png" alt= "Image is unavailable" title="Sunny">
+				<p id="text8"> </p>
+				<span class="theHigh bottomMargin" id="high8"> </span> <span class="bottomMargin" id="low8"> </span>
+			</div>
+
+			<div class="dayOfWeather">
+				<p  id="day9"></p>
+				<img class="picSizeLimit" id="main9" src="WeatherApp 3/sunny.png" alt= "Image is unavailable" title="Sunny">
+				<p id="text9"> </p>
+				<span class="theHigh bottomMargin" id="high9"> </span> <span class="bottomMargin" id="low9"> </span>
+			</div>
+		</div>
+	</div>
+
+	<div id="buttonStuff">
+		<div id="leftButtonStuff">
+			<img class="arrowButton" id="leftArrow" onclick="buttonActionLeft()"  src="WeatherApp%203/arrow-left.png" alt= "Image is unavailable" title="arrow-left button">
+			<div class="verticallyAlign" id="leftArrowText">Previous Day's Forecast</div>
+		</div>
+		<div  id="rightButtonStuff">
+			<div class="verticallyAlign" id="rightArrowText">Next Day's <p>Forecast</p></div>
+			<img class="arrowButton" id="rightArrow" onclick="buttonActionRight()"  src="WeatherApp%203/arrow-right.png" alt= "Image is unavailable" title="arrow-right button">
+		</div>
+	</div>
+
+	<!-- contains callback function that is called when weather gets here from server --> 
+	<script src="weather.js"></script>
+
+	<!-- asks server to send weather -->
+	<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='davis, ca')&format=json&callback=callbackFunction"></script>
+
+
+
+
+</body>
+
+<footer>
+	Powered by Yahoo!'s Weather API
+</footer>
+</html>
