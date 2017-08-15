@@ -133,11 +133,13 @@ button.submit {
 
 div#weatherBar{
 	display: flex;
-	margin-left: 17%;
-	margin-right: 17%;
 	max-width: 770px;
 	overflow: hidden;
 }
+
+/*div#forecastMovable{
+
+}*/
 
 div#forecastMovable{
 	display: flex;
@@ -189,17 +191,20 @@ div#buttonStuff{
 	margin-top: 2%;
 	display: flex;
 	min-width: 100%;
-	text-align: center;
 }
 
 div#leftButtonStuff{
-	margin-left: 12%;
+	/*margin-left: 12.5%;*/
+	max-width: 232px;
 	display: flex;
+	justify-content: center;
 }
 
 div#rightButtonStuff{
-	margin-left: 38%;
+	/*margin-right: 24%;*/
+	/*margin-left: 38%; */
 	min-width: 141px;
+	/*max-margin-right: 463px;*/
 	display: flex;
 }
 
@@ -216,6 +221,7 @@ div#rightButtonStuff{
 
 div#leftArrowText{
 	margin-top: 3%;
+	text-align: left;
 }
 
 div#rightArrowText{
@@ -227,6 +233,48 @@ div#rightArrowText{
 	padding-top: 5px;
 }
 
-img#leftArrow{
+/*img#leftArrow{
 	margin-left: 25%;
+}
+*/
+
+/************************************************************************************************
+The code below is used to keep the left and right buttons from expanding beyond the weatherBar
+*************************************************************************************************/
+.maintainPositionRightButton {
+	margin-left: 400px;
+}
+
+.changeableMargin {
+	margin-left: 0%;
+}
+
+@media screen and (min-width: 857px) and (max-width: 926px) {
+	.changeableMargin {
+		margin-left: 5%;
+	}
+}
+
+@media screen and (min-width: 926px) and (max-width: 1097px) {
+	.changeableMargin {
+		margin-left: 10%;
+	}
+}
+
+@media screen and (min-width: 1097px) and (max-width: 1217px) {
+	.changeableMargin {
+		margin-left: 15%;
+	}
+}
+
+@media screen and (min-width: 1218px) and (max-width: 1349px) {
+	.changeableMargin {
+		margin-left: 20%;
+	}
+}
+
+@media screen and (min-width: 1350px) {
+	.changeableMargin {
+		margin-left: 25%;
+	}
 }
